@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,16 +16,27 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { float32ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Subtract the elements of an output one-dimensional single-precision floating-point ndarray from the corresponding elements in an input one-dimensional single-precision floating-point ndarray and assign the results to the output ndarray.
+* Subtracts the elements of an output one-dimensional single-precision floating-point ndarray from the corresponding elements in an input one-dimensional single-precision floating-point ndarray and assigns the results to the output ndarray.
 *
-* @module @stdlib/blas-ext-base-ndarray-sxsy
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a one-dimensional output ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Float32Vector = require( '@stdlib/ndarray-vector-float32' );
-* var sxsy = require( '@stdlib/blas-ext-base-ndarray-sxsy' );
 *
 * var x = new Float32Vector( [ 1.0, 2.0, 3.0, 4.0, 5.0 ] );
 * var y = new Float32Vector( [ 2.0, 4.0, 6.0, 8.0, 10.0 ] );
@@ -33,12 +44,9 @@
 * var out = sxsy( [ x, y ] );
 * // returns <ndarray>[ -1.0, -2.0, -3.0, -4.0, -5.0 ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function sxsy( arrays: [ float32ndarray, float32ndarray ] ): float32ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = sxsy;
